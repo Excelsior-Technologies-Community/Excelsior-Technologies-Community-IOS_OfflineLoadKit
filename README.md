@@ -15,14 +15,14 @@ https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Commu
 
 ---
 
-## ✨ Features
+##  Features
 
-- ✅ Generic: works with **any Codable model**
-- ✅ Offline-first: last successful value is kept locally
-- ✅ Auto-sync: periodically calls your API in the background
-- ✅ Change detection: UI updates only when backend data changes
-- ✅ Network-aware: only syncs when internet is available
-- ✅ Extremely simple SwiftUI integration
+-   Generic: works with **any Codable model**
+-   Offline-first: last successful value is kept locally
+-   Auto-sync: periodically calls your API in the background
+-   Change detection: UI updates only when backend data changes
+-   Network-aware: only syncs when internet is available
+-   Extremely simple SwiftUI integration
 
 You only need to:
 
@@ -32,7 +32,7 @@ You only need to:
 
 ---
 
-## 📦 Requirements
+##  Requirements
 
 - iOS 15.0+
 - Xcode 15+
@@ -40,7 +40,7 @@ You only need to:
 
 ---
 
-## 🔧 Installation (Swift Package Manager)
+##  Installation (Swift Package Manager)
 
 ### 1. Using Xcode UI
 
@@ -81,7 +81,7 @@ And inside your target:
 
 ---
 
-## 🚀 Quick Start (Step-by-Step)
+##   Quick Start (Step-by-Step)
 
 This guide helps new developers integrate OfflineSyncKit into any SwiftUI project.
 
@@ -231,12 +231,12 @@ Text(network.isConnected ? "Online" : "Offline")
 
 ---
 
-## 💬 Support
+##  Support
 
 If you need help integrating this into your app:
 
 - Open an Issue on GitHub  
 - Or contact maintainers
 
-Happy coding & seamless offline syncing 🚀
+Happy coding & seamless offline syncing  
 
