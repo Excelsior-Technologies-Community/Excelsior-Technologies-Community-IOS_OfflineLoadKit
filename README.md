@@ -301,4 +301,151 @@ If developer wants to add a new entity:
 * Background saving
 * Conflict resolution
 
-   
+  
+## 🔁 IMPORTANT: Using This Project With YOUR Own App Name
+
+This project is named **`IOS_OfflineLoadKit`**, but **Core Data is name-sensitive**.
+
+If a developer copies this project or uses it as a reference **with a different project name**, they **MUST update certain places**.
+
+Failing to do this is the **#1 reason Core Data crashes**.
+
+---
+
+## 🧠 Core Rule (Very Important)
+
+> **Core Data model name, container name, and project usage must match**
+
+Core Data does **NOT** automatically detect names.
+
+---
+
+## 📍 Where the Project Name Is Used (MANDATORY)
+
+### 1️⃣ Core Data Model File (`.xcdatamodeld`)
+
+In this project:
+
+```
+IOS_OfflineLoadKit.xcdatamodeld
+```
+
+👉 If your app name is `MyCoreDataApp`, then the model file **must be**:
+
+```
+MyCoreDataApp.xcdatamodeld
+```
+
+---
+
+### 2️⃣ PersistenceController.swift (MOST IMPORTANT)
+
+In **this project**, we use:
+
+```swift
+NSPersistentContainer(name: "IOS_OfflineLoadKit")
+```
+
+🔴 **THIS STRING MUST MATCH THE MODEL FILE NAME**
+
+---
+
+### ✅ If your project name is different
+
+Example:
+
+* Project name: `CoreDataDemo`
+* Model file: `CoreDataDemo.xcdatamodeld`
+
+Then you **must change**:
+
+```swift
+NSPersistentContainer(name: "CoreDataDemo")
+```
+
+❌ If names do not match → Core Data loads **no entities** → app crashes.
+
+---
+
+### 3️⃣ App File (`AppNameApp.swift`)
+
+In this project:
+
+```
+IOS_OfflineLoadKitApp.swift
+```
+
+If your project is named `CoreDataDemo`, your app file will be:
+
+```
+CoreDataDemoApp.swift
+```
+
+You **do not change logic**, only the file name is different.
+
+---
+
+### 4️⃣ Target Membership (Very Common Mistake)
+
+For **EVERY Core Data file**, ensure:
+
+* `.xcdatamodeld`
+* `PersistenceController.swift`
+* `NSManagedObject` subclass files
+
+All must have:
+
+```
+☑ Target Membership → YourAppName
+```
+
+❌ If unchecked → Swift cannot see the file → Core Data crashes.
+
+---
+
+## 🧩 Summary Table (VERY IMPORTANT)
+
+| Your App Name | What To Change                             |
+| ------------- | ------------------------------------------ |
+| `MyApp`       | Rename model to `MyApp.xcdatamodeld`       |
+| `MyApp`       | Use `NSPersistentContainer(name: "MyApp")` |
+| `MyApp`       | Ensure target membership is checked        |
+| Any name      | Entity & class names stay same (`Person`)  |
+
+---
+
+## ❗ Common Crash If You Forget This
+
+If you see:
+
+```
+Failed to load model named XYZ
+No NSEntityDescriptions found
+Context not connected to persistent store
+```
+
+👉 99% chance **model name ≠ container name**
+
+---
+
+## ✅ Safe Checklist When Renaming Project
+
+If developer renames project or uses this code:
+
+* [ ] Rename `.xcdatamodeld`
+* [ ] Update `NSPersistentContainer(name:)`
+* [ ] Clean Build Folder
+* [ ] Run app again
+
+---
+
+## 🧠 Key Takeaway (For Beginners)
+
+> Core Data does NOT care about your project name
+> Core Data ONLY cares about the **model name you give it**
+
+If those names don’t match, Core Data **will not load anything**.
+
+---
+
+ 
