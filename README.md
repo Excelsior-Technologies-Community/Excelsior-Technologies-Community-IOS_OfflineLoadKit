@@ -14,6 +14,23 @@ This project teaches **Core Data from zero**, including:
 
 ---
 
+### ⚠️ IMPORTANT (READ THIS)
+
+If your **project name is NOT `IOS_OfflineLoadKit`**,
+you **MUST update the Core Data model name and container name** accordingly.
+
+➡️ **Read the section below:**
+
+### **IMPORTANT: Using This Project With YOUR Own App Name**
+
+This explains:
+
+* Which file names must change
+* Where `NSPersistentContainer(name:)` must be updated
+* How to avoid Core Data crashes
+ 
+---
+
 ## 🎯 What this project does
 
 * User enters:
@@ -445,7 +462,4 @@ If developer renames project or uses this code:
 > Core Data ONLY cares about the **model name you give it**
 
 If those names don’t match, Core Data **will not load anything**.
-
----
-
  
