@@ -11,7 +11,7 @@ It lets any developer:
 - Work **offline-first** – the UI still shows the last known data when internet is off
 
 Repo:  
-https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_OfflineLoadKit
+https://github.com/Excelsior-Technologies-Community/IOS_OfflineLoadKit/tree/Development
 
 ---
 
@@ -49,37 +49,9 @@ You only need to:
 3. In the search bar, paste:
 
    ```text
-   https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_OfflineLoadKit
+	https://github.com/Excelsior-Technologies-Community/IOS_OfflineLoadKit/tree/Development
    ```
 
-4. Choose **Up to Next Major Version** (recommended).
-5. Add the product **OfflineSyncKit** to your app target.
-
----
-
-### 2. Using `Package.swift` (SPM)
-
-```swift
-dependencies: [
-    .package(
-        url: "https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_OfflineLoadKit",
-        from: "1.0.0"
-    )
-]
-```
-
-And inside your target:
-
-```swift
-.target(
-    name: "YourApp",
-    dependencies: [
-        .product(name: "OfflineSyncKit", package: "Excelsior-Technologies-Community-IOS_OfflineLoadKit")
-    ]
-)
-```
-
----
 
 ##   Quick Start (Step-by-Step)
 
